@@ -2,6 +2,8 @@ require 'DockingStation'
 
 describe DockingStation do
 	it { is_expected.to respond_to :release_bike }
+	it { is_expected.to respond_to :dock_bike }
+	it { is_expected.to have_attributes(bikes: []) }
 
 	describe '#release_bike' do
 		it "should create a new Bike" do
@@ -10,3 +12,11 @@ describe DockingStation do
 		end
 	end
 end
+
+# respond to dock_bike
+# have_attributes bikes = []
+# 
+
+# station = DockingStation.new
+# bike = station.release_bike
+
