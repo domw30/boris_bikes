@@ -8,8 +8,12 @@ describe DockingStation do
 
 	describe '#release_bike' do
 		it "should create a new Bike" do
-			bike = subject.release_bike
-			expect(bike).to be_working
+		  docking_station = subject
+			docking_station.dock_bike(Bike.new)
+			expect(docking_station.release_bike).to be_working
+		end
+		it "should print a message when no bikes" do
+			expect{subject.release_bike}.to raise_error "No bike available"
 		end
 	end
 
